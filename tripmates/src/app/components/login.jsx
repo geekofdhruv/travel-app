@@ -11,6 +11,8 @@ const LoginComponent = ({ heading}) => {
     const handleLogin = async (e) => {
         e.preventDefault();
        try {
+        console.log('hi');
+        
             // Use POST method to send login data
             const response = await axios.post("http://localhost:3000/login", {
                 username,

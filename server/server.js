@@ -27,10 +27,11 @@ const db = new pg.Client({
 
   app.post("/login", async(req,res)=>{
     console.log(req.body);
-    
     const username = req.body.username 
     const password = req.body.password
     try {
+      
+      
          const result = await db.query("select * from users where email = $1 or name = $1",[username]);
          
          for (let i = 0; i < result.rows.length; i++) {
@@ -110,6 +111,20 @@ const db = new pg.Client({
     
    
   })
+
+  app.post('/trips', async (req, res) => {
+    try {
+      const response = await db.query("SELECT * FROM trips");
+      const result = await db.query("select * from hosts")
+      return res.status(200).json({
+        trips : response.rows,
+        hosts : result.rows}); 
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ error: 'Something went wrong' });
+    }
+  });
+  
 
 
 

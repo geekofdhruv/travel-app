@@ -74,7 +74,7 @@ const Navbar = () => {
         <div>
           <ul className="flex space-x-6">
             <li>
-              <a href="#" className="hover:text-orange-500 text-xl">Trips</a>
+              <a href="/trips" className="hover:text-orange-500 text-xl">Trips</a>
             </li>
             <li>
               <a href="#" className="hover:text-orange-500 text-xl">Match</a>

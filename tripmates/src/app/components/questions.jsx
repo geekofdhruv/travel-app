@@ -39,7 +39,7 @@ const QuestionsList = ({ questions }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="mt-8">
+        <form onSubmit={handleSubmit} className="mt-8 flex flex-col justify-center">
             {questions.map((question, index) => (
                 <div key={index} className="my-4">
                     <label className="block font-medium mb-2" htmlFor={`question_${index}`}>
@@ -62,7 +62,7 @@ const QuestionsList = ({ questions }) => {
             ))}
             <button 
                 type="submit"
-                className="px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300"
+                className="px-6 py-3 bg-orange-400 text-white text-lg font-semibold rounded-lg hover:bg-orange-600 transition duration-300"
             >
                 Submit
             </button>
